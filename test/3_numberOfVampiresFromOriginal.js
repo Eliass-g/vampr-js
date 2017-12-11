@@ -23,7 +23,7 @@ describe("Vampire", function() {
       offspring1.addOffspring(offspring2);
       offspring2.addOffspring(offspring3);
       offspring3.addOffspring(offspring4);
-    })
+    });
 
     it("root should be 0 from original", () => {
       expect(rootVampire.numberOfVampiresFromOriginal).to.equal(0);
