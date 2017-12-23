@@ -10,7 +10,7 @@ describe("Vampire", function() {
     rootVampire = new Vampire("root");
   });
 
-  describe("moreSeniorVampire", () => {
+  describe("isMoreSeniorThan", () => {
 
     let offspring1, offspring2, offspring3, offspring4;
     beforeEach(() => {
@@ -25,20 +25,25 @@ describe("Vampire", function() {
       offspring3.addOffspring(offspring4);
     });
 
-    it("original should be more senior", () => {
+    it("should return true when called on root vampire", () => {
       expect(rootVampire.isMoreSeniorThan(offspring1)).to.equal(true);
       expect(rootVampire.isMoreSeniorThan(offspring2)).to.equal(true);
       expect(rootVampire.isMoreSeniorThan(offspring3)).to.equal(true);
       expect(rootVampire.isMoreSeniorThan(offspring4)).to.equal(true);
+    });
 
+    it("should return false when called with root vampire", () => {
       expect(offspring1.isMoreSeniorThan(rootVampire)).to.equal(false);
       expect(offspring2.isMoreSeniorThan(rootVampire)).to.equal(false);
       expect(offspring3.isMoreSeniorThan(rootVampire)).to.equal(false);
       expect(offspring4.isMoreSeniorThan(rootVampire)).to.equal(false);
     });
 
-    it("offspring 3 should be more senior", () => {
+    it("should return true when a vampire is more senior", () => {
       expect(offspring3.isMoreSeniorThan(offspring4)).to.equal(true);
+    });
+    
+    it("should return false when a vampire is not more senior", () => {
       expect(offspring4.isMoreSeniorThan(offspring3)).to.equal(false);
     });
 
