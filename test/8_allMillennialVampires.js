@@ -34,6 +34,10 @@ describe("Vampire", function() {
 
     it("should return an array of all vampires converted after 1980", () => {
       expect(rootVampire.allMillennialVampires.length).to.equal(4); //[offspring5, offspring6, offspring7, offspring8]
+      expect(rootVampire.allMillennialVampires).to.include(offspring5);
+      expect(rootVampire.allMillennialVampires).to.include(offspring6);
+      expect(rootVampire.allMillennialVampires).to.include(offspring7);
+      expect(rootVampire.allMillennialVampires).to.include(offspring8);
     });
   });
 });
